@@ -137,6 +137,11 @@ async function makeMove() {
         return;
     }
 
+    if (gameState.getNodeState(nodeId) !== 'black') {
+        alert('Occupied space');
+        return;
+    }
+
     gameState.setNodeState(nodeId, 'blue'); // Player's move is blue
     drawBoard();
 
