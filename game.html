@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        input, button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="controls">
+    <input type="text" id="nodeInput" placeholder="Enter node ID">
+    <button id="moveButton" onclick="makeMove()">Make Move</button>
+</div>
+<canvas id="gameCanvas"></canvas>
+<script src="game.js"></script>
+</body>
+</html>

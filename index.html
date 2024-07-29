@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Game - Home</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #rulesBox {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            width: 80%;
+            max-width: 600px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="rulesBox">
+        <h2>Game Rules</h2>
+        <p>The goal of the game is to create a connected component of nodes of your color that touches all three sides of the game board. The nodes which touch each side have numbers as follows:</p>
+        <ul>
+            <li>Side 1: Nodes 1 to 9</li>
+            <li>Side 2: Nodes 9 to 17</li>
+            <li>Side 3: Nodes 17 to 24 and Node 1</li>
+        </ul>
+        <p>Take turns to choose nodes and convert them to your color. The first player to connect all three sides with their color wins!</p>
+    </div>
+    <button id="createPartyButton" onclick="createParty()">Create Party</button>
+
+    <script>
+        const baseURL = 'http://127.0.0.1:5000'; // Change this to your server's base URL
+
+        async function createParty() {
+            try {
+                const response = await fetch(`${baseURL}/api/createParty`,{method: 'GET'}); // Adjust this endpoint as necessary
+                if (!response.ok) {
+                    throw new Error('Failed to create party');
+                }
+                const data = await response.json();
+                const partyCode = data.partyCode;
+                window.location.href = `game.html?code=${partyCode}`;
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+    </script>
+</body>
+</html>
