@@ -1,4 +1,4 @@
-const baseURL = 'http://127.0.0.1:5000'; // Change this to your server's base URL
+const baseURL = 'https://unforgettablepl.pythonanywhere.com/'; // Change this to your server's base URL
 
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
