@@ -175,7 +175,7 @@ async function sendMoveToServer(nodeId, color) {
         }
     } catch (error) {
         alert('An error occurred on the server');
-        window.location.href = '/';
+        window.location.href = '/Y-Game-Client/';
     }
 }
 
@@ -207,7 +207,7 @@ async function fetchOpponentMove() {
         document.getElementById('moveButton').disabled = false;
     } catch (error) {
         alert('An error occurred on the server');
-        window.location.href = '/';
+        window.location.href = '/Y-Game-Client/';
     }
 }
 
@@ -278,7 +278,7 @@ async function fetchInitialTurn() {
 
         if (playerId === 0) {
             alert('Invalid party code');
-            window.location.href = '/';
+            window.location.href = '/Y-Game-Client/';
         } else if (playerId === 1) {
             alert('Share this link with your friend to join the game');
             playerTurn = true;
@@ -290,7 +290,7 @@ async function fetchInitialTurn() {
         }
     } catch (error) {
         alert('An error occurred on the server');
-        window.location.href = '/';
+        window.location.href = '/Y-Game-Client/';
     }
 }
 
